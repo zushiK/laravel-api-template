@@ -1,2 +1,2 @@
-mv .env.example .env
+cp .env.example .env
 composer install
