@@ -3,7 +3,6 @@
 namespace DummyNamespace;
 
 use App\Repositories\Repository;
-use App\ServicesDummyNM\DummyModelService;
 use App\ModelsDummyNM\DummyModel;
 
 class DummyClass extends Repository
@@ -11,7 +10,7 @@ class DummyClass extends Repository
     /**
      * @var DummyModel
      */
-    private $model;
+    protected $model;
 
     /**
      * @param DummyModel $model

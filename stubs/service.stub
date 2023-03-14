@@ -10,7 +10,7 @@ class DummyClass extends Service
     /**
      * @var DummyModelRepository
      */
-    private $repository;
+    protected $repository;
 
     /**
      * @param DummyModelRepository $repository
