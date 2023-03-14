@@ -3,6 +3,7 @@
 namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -38,11 +39,16 @@ class Handler extends ExceptionHandler
 
     /**
      * Register the exception handling callbacks for the application.
+     *
+     * @return void
      */
-    public function register(): void
+    public function register()
     {
-        $this->reportable(function (Throwable $e) {
-            //
+        //　404の場合のエラー表示処理
+        $this->renderable(function (HttpException $e, $request) {
+            return response()->json([
+                'message' => $e->getMessage()
+            ], $e->getStatusCode());
         });
     }
 }
