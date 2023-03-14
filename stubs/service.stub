@@ -3,10 +3,15 @@
 namespace DummyNamespace;
 
 use App\Services\Service;
-use App\Repositories\DummyModelRepository;
+use App\RepositoriesDummyNM\DummyModelRepository;
 
 class DummyClass extends Service
 {
+    /**
+     * @var DummyModelRepository
+     */
+    private $repository;
+
     /**
      * @param DummyModelRepository $repository
      */

@@ -105,7 +105,7 @@ class MakeCustomModel extends Command
         $replace = [
             'DummyModel' => $this->argument('name'),
             'DummyLowerModel' => Str::plural(strtolower($l)),
-            'DummyNM' => implode("\\", $s)
+            'DummyNM' => implode("\\", $s) ? "\\" . implode("\\", $s) : ""
         ];
 
         return str_replace(

@@ -103,7 +103,7 @@ class MakeService extends Command
         array_pop($s);
         $replace = [
             'DummyModel' => $this->option('model'),
-            'DummyNM' => implode("\\", $s)
+            'DummyNM' => implode("\\", $s) ? "\\" . implode("\\", $s) : ""
         ];
 
         return str_replace(

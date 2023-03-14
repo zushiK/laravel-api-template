@@ -104,7 +104,7 @@ class MakeCustomController extends Command
         $replace = [
             'DummyModel' => $this->option('model'),
             'DummyLowerModel' => strtolower($this->option('model')),
-            'DummyNM' => implode("\\", $s)
+            'DummyNM' => implode("\\", $s) ? "\\" . implode("\\", $s) : ""
         ];
 
         return str_replace(
