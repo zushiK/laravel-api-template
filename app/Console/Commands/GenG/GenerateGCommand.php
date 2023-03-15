@@ -53,6 +53,12 @@ class GenerateGCommand extends Command
         Artisan::call('make:custom-model', ['name' => $m]);
         echo Artisan::output();
         // $this->error(str_replace(array("\r\n", "\r", "\n"), '', Artisan::output()));
+        Artisan::call('make:request', ['name' => $m . "Request"]);
+        echo Artisan::output();
+        // $this->error(str_replace(array("\r\n", "\r", "\n"), '', Artisan::output()));
+        Artisan::call('make:resource', ['name' => $m . "Resource"]);
+        echo Artisan::output();
+        // $this->error(str_replace(array("\r\n", "\r", "\n"), '', Artisan::output()));
 
         $this->info("Genarate Successfully!");
     }
